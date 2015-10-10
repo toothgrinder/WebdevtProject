@@ -1,0 +1,20 @@
+body {
+    background: #1b2838;
+    background-color: #1b2838;
+    text-align: left;
+    color: #8F98A0;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+.jumbotron{
+    color:#7cc2fb;
+    background-color:#0f0f0f;
+    margin-left:10%;
+    margin-right:10%;
+    padding-left:100px;
+    padding-right:100px;
+}
+#sidebar{
+    color:#7cc2fb;
+}
