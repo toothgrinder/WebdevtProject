@@ -5,7 +5,7 @@
  * Date: 10/3/2015
  * Time: 1:40 AM
  */
-$servername = "https://test-jluson.rhcloud.com/";
+$servername = "127.9.170.130";
 $username = "adminyvpCWuH";
 $password = "_x2kI2jPkCEN";
 $db = "steam";
