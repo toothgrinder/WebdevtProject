@@ -36,18 +36,23 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Products</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
             <?php
+            if(empty($login_session)){
+            echo "<ul class=\"nav navbar-nav\">
+                <li>
+                    <a href=\"#\">Products</a>
+                </li>
+
+            </ul>";
+            }
+            else{
+                echo "<ul class=\"nav navbar-nav\">
+                <li>
+                    <a href=\"buyproduct.php\">Buy Products</a>
+                </li>
+                </ul>";
+
+            }
             if(empty($login_session)){
                 echo "<ul class=\"nav navbar-nav navbar-right\">";
                 echo "<li><a href=\"signup.php\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>";
@@ -69,14 +74,22 @@
 </nav>
 <br><br><br>
 <!-- container-->
-<div class="container">
+        <?php
+        if(!empty($login_session)){
+            echo    "
+                    <div class=\"container\">
+                    <div class=\"well well-lg\" >
+                            <b class=\"alert-info\"><h1>WELCOME: 09$login_session!</h1></b>
 
-    <?php
-    if(!empty($login_session)){
-        echo "<b class=\"alert-info\">WELCOME $login_session!</b>";
-    }
-    ?>
-</div>
+                    </div>
+                    </div>
+                ";
+
+        }
+        ?>
+
+
+
 <?php
 /**
  * Created by PhpStorm.

@@ -7,7 +7,7 @@
  * Date: 9/30/2015
  * Time: 10:43 AM
  */
-include('config.php');
+ include('config.php');
 include('session.php');
 if(isset($_SESSION['login_user'])){
     header("Location:index.php");
@@ -72,13 +72,7 @@ if(isset($_POST['submit'])){
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
                     <a href="#">Products</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -161,5 +155,5 @@ if(isset($_POST['submit'])){
 </body>
 </html>
 <?php
-$con->close();
+$con = null;
 ?>

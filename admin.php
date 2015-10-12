@@ -8,7 +8,7 @@ $username = stripslashes($username);
 $password = stripslashes($password);
 $username = mysqli_real_escape_string($con,$username);
 $password = mysqli_real_escape_string($con,$password);
-$query = mysqli_query($con,"SELECT * FROM admin WHERE user_pass='$password' AND user_contact='$username'");
+$query = mysqli_query($con,"SELECT * FROM admin WHERE admin_pass='$password' AND admin_user='$username'");
 $rows = $query->num_rows;
 if($rows == 1){
 $_SESSION['admin_user'] = $username;

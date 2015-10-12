@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php
     session_start();
+
     if(isset($_SESSION['login_user'])){
-        header("Location:index.php");
+        header	("location:index.php");
     }
     if(isset($_POST['submit'])){
         include('config.php');
@@ -16,8 +17,7 @@
         $rows = $query->num_rows;
         if($rows == 1){
             $_SESSION['login_user'] = $username;
-            header("location:index.php");
-
+            header('location:index.php');
         }
         else{
             $errr = "Username or Password invalid.";
@@ -56,13 +56,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
                     <a href="#">Products</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -80,6 +74,14 @@
     <div class="container">
         <div class="jumbotron">
             <form class="form-signin" method="post">
+                <?php
+                 if(!empty($errr)){
+                     echo "<div class=\"alert alert-danger\">
+                    <strong>$errr</strong>
+                    </div>";
+                 }
+                ?>
+
                 <h2 class="form-signin-heading">Please sign in</h2>
                 <div class="input-group">
                     <span class="input-group-addon">+63 9</span>
@@ -105,10 +107,3 @@
 ?>
 </body>
 </html>
-<?php
-/**
- * Created by PhpStorm.
- * User: Obi Kun
- * Date: 10/2/2015
- * Time: 10:20 AM
- */

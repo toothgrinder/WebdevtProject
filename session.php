@@ -1,7 +1,13 @@
 <?php
-include('config.php');
 session_start();
+include('config.php');
+$admin_check ="";
+$user_check = "";
+if(isset($_SESSION['login_user']))
 $user_check = $_SESSION['login_user'];
+if(isset($_SESSION['admin_user']))
+$admin_check = $_SESSION['admin_user'];
+
 $ses_sql = mysqli_query($con,"SELECT user_contact from user WHERE user_contact='$user_check'");
 $row = $ses_sql->fetch_assoc();
 $login_session = $row['user_contact'];

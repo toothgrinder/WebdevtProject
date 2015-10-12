@@ -6,6 +6,10 @@
  * Date: 10/7/2015
  * Time: 4:23 PM
  */
+session_start();
+if(!isset($_SESSION['admin_user'])){
+    header("Location:admin.php");
+}
 ?>
 <html>
 <head>
@@ -35,7 +39,7 @@
                 <li><a href="index2.php">Home</a></li>
                 <li><a href="viewmembers.php">View Members</a></li>
                 <li><a href="confirm.php">Confirm Orders</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </div>
     </div>
